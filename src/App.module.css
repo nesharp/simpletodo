@@ -1,0 +1,3 @@
+.app{
+    @apply bg-transparent h-[90vh] w-[90vw] mx-auto my-[5vh] rounded-3xl shadow-2xl;
+}
