@@ -1,10 +1,19 @@
 import React from 'react';
 import styles from './App.module.css';
-import Tasks from './components/Tasks/Tasks.module';
+import Task from './components/Tasks/Tasks.module';
 function App() {
   return (
     <div className={styles.app}>
-      <Tasks/>
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+      <Task _id="sdf" text='asdf' isCompleted={false} />
+
     </div>
   );
 }

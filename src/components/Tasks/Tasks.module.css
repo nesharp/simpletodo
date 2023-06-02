@@ -1,0 +1,17 @@
+.task{
+    @apply bg-transparent bg-blend-multiply bg-[#4B69FE] bg-opacity-60 w-11/12 px-5 py-4 mx-auto mb-10 rounded-xl shadow-md text-white flex hover:shadow-2xl transition-all justify-between items-center ; 
+}    
+.task input[type="text"]{
+    @apply w-full text-lg h-8 bg-transparent outline-none text-white border-none;
+}
+.checkbox{
+    @apply w-6 h-6 rounded-full border-2 border-white mr-10 backdrop-blur-md cursor-pointer checked:h-7 checked:w-7 transition-all;
+    
+}
+
+.task .trash{
+    @apply text-white text-2xl cursor-pointer hover:text-red-600 ml-4;
+}
+.checkbox:checked + input[type="text"]{
+    @apply line-through text-red-300;
+}
