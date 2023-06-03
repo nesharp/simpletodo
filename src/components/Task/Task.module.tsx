@@ -1,17 +1,19 @@
-import React, { FC, ReactComponentElement } from "react";
+import React, { FC, ReactComponentElement, useState } from "react";
 import styles from "./Task.module.css";
-import { useState } from "react";
-import { ITask } from "../../interfaces/ITask";
-import {BsTrash} from 'react-icons/bs';
+import { IFTask } from "../../interfaces/ITask";
+import { BsTrash } from 'react-icons/bs';
+import { deleteData } from "../../logic/logic";
+import {data } from "../../data/data";
 
-const Task:FC<ITask> = ({_id, text, isCompleted}) => {
+
+const Task:FC<IFTask> = ({_id, text, isCompleted, removeTodo}) => {
     const [value, setValue] = useState<string>(text);
     const [completed, setCompleted] = useState<boolean>(isCompleted);
     return (
         <div className={styles.task} key={_id}>
             <input className={styles.checkbox} type="checkbox" checked={completed} onChange={(e)=>{setCompleted(e.target.checked)}} />
-            <input className={styles.text} type="text" value={value} onChange={(e)=>{setValue(e.target.value)}} />
-            <BsTrash className={styles.trash}  />
+            <input className={styles.text} type="text" readOnly value={value} onChange={(e)=>{setValue(e.target.value)}} />
+            <button onClick={()=>{removeTodo(_id)}} ><BsTrash className={styles.trash}  /></button>
         </div>
     );
 }

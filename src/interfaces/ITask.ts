@@ -3,8 +3,10 @@ export interface ITask {
     text: string,
     isCompleted: boolean
 }
-export interface ITasks {
-    task: ITask
+
+export interface IFTask {
+    _id: string,
+    text: string,
+    isCompleted: boolean,
+    removeTodo: (id: string) => void
 }
-        
-    

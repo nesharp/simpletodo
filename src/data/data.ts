@@ -1,9 +1,9 @@
 import { ITask } from "../interfaces/ITask";
 
-const data:ITask[] =[
+export let data:ITask[] =[
     {
         _id: "5f5f67d8a5b9a3b3c8c3c3c3",
-        text: "Hello World!",
+        text: "Hello there!",
         isCompleted: false
     },{
         _id: "5f5f67d8a5b9a3b3c8c3c3c4",
@@ -11,9 +11,12 @@ const data:ITask[] =[
         isCompleted: true
     },{
         _id: "5f5f67d8a5b9a3b3c8c3c3c5",
-        text: "Hello World!",
+        text: "Hi World!",
         isCompleted: false
     }
 ]
+export const newData = (newdata:ITask[]) => {
+    data = newdata;
+}
 
 export default data;

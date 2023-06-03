@@ -1,0 +1,7 @@
+.input{
+    @apply bg-transparent bg-blend-multiply bg-[#4B69FE] bg-opacity-60 w-11/12 px-5 py-4 mx-auto mb-10 rounded-xl shadow-md text-white flex hover:shadow-2xl transition-all justify-between items-center ; 
+
+}
+.input input{
+    @apply w-full bg-transparent outline-none text-lg  text-white placeholder-white border-none p-1 ml-5;
+}

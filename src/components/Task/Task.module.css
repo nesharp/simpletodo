@@ -15,3 +15,6 @@
 .checkbox:checked + input[type="text"]{
     @apply line-through text-red-300;
 }
+.task button{
+    @apply w-fit bg-transparent border-none;
+}

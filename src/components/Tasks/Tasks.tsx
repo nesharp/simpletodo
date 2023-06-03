@@ -1,14 +1,21 @@
 import React from 'react';
-import { ITask, ITasks } from '../../interfaces/ITask';
+import {useState} from 'react';
+import { ITask } from '../../interfaces/ITask';
 import Task from '../Task/Task.module';
 import data from '../../data/data';
 
-
-const Tasks  = (todos:any) => {
-   
+const Tasks = () => {
+    const [tasks, setTasks] = useState<ITask[]>(data);
+    const removeTodo = (id: string) => {
+        setTasks(tasks.filter(todo => todo._id !== id));
+    }
     return (
         <div>
-            {Object.keys(todos).map((key) => <Task key={key} _id={todos[key]._id} text={todos[key].text} isCompleted={todos[key].isCompleted} />)}
+            
+            {tasks.map(todo => (
+                <Task {...todo} key={todo._id} removeTodo={removeTodo} />
+            )
+            )}
         </div>
     );
 }
