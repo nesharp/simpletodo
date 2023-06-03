@@ -1,5 +1,5 @@
 import React, { FC, ReactComponentElement } from "react";
-import styles from "./Tasks.module.css";
+import styles from "./Task.module.css";
 import { useState } from "react";
 import { ITask } from "../../interfaces/ITask";
 import {BsTrash} from 'react-icons/bs';

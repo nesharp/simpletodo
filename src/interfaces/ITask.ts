@@ -3,3 +3,8 @@ export interface ITask {
     text: string,
     isCompleted: boolean
 }
+export interface ITasks {
+    task: ITask
+}
+        
+    
