@@ -2,7 +2,6 @@ import React, { FC, ReactComponentElement, useState } from "react";
 import styles from "./Task.module.css";
 import { IFTask } from "../../interfaces/ITask";
 import { BsTrash } from 'react-icons/bs';
-import { deleteData } from "../../logic/logic";
 import {data } from "../../data/data";
 
 

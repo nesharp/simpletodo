@@ -10,3 +10,6 @@ export interface IFTask {
     isCompleted: boolean,
     removeTodo: (id: string) => void
 }
+export interface IAddFunc{
+    addTodo: (text: string) => void
+}

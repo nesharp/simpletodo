@@ -8,7 +8,6 @@ import Input from './components/Input/Input.module';
 function App() {
   return (
     <div className={styles.app}>
-      <Input />
       <Tasks />
     </div>
   );
