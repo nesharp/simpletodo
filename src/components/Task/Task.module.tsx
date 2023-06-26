@@ -1,8 +1,7 @@
-import React, { FC, ReactComponentElement, useState } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './Task.module.css'
-import { IFTask, ITask } from '../../interfaces/ITask'
+import { ITask } from '../../interfaces/ITask'
 import { BsTrash } from 'react-icons/bs'
-import { data } from '../../data/data'
 import { useActions } from '../../hooks/useActions'
 
 const Task: FC<ITask> = ({ _id, text, isCompleted }) => {
