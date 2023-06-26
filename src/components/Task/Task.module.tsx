@@ -1,19 +1,42 @@
-import React, { FC, ReactComponentElement, useState } from "react";
-import styles from "./Task.module.css";
-import { IFTask } from "../../interfaces/ITask";
-import { BsTrash } from 'react-icons/bs';
-import {data } from "../../data/data";
+import React, { FC, ReactComponentElement, useState } from 'react'
+import styles from './Task.module.css'
+import { IFTask, ITask } from '../../interfaces/ITask'
+import { BsTrash } from 'react-icons/bs'
+import { data } from '../../data/data'
+import { useActions } from '../../hooks/useActions'
 
-
-const Task:FC<IFTask> = ({_id, text, isCompleted, removeTodo}) => {
-    const [value, setValue] = useState<string>(text);
-    const [completed, setCompleted] = useState<boolean>(isCompleted);
+const Task: FC<ITask> = ({ _id, text, isCompleted }) => {
+    const [value, setValue] = useState<string>(text)
+    const [completed, setCompleted] = useState<boolean>(isCompleted)
+    const { deleteTodo, changeTodoState } = useActions()
     return (
         <div className={styles.task} key={_id}>
-            <input className={styles.checkbox} type="checkbox" checked={completed} onChange={(e)=>{setCompleted(e.target.checked)}} />
-            <input className={styles.text} type="text" readOnly value={value} onChange={(e)=>{setValue(e.target.value)}} />
-            <button onClick={()=>{removeTodo(_id)}} ><BsTrash className={styles.trash}  /></button>
+            <input
+                className={styles.checkbox}
+                type="checkbox"
+                checked={completed}
+                onChange={(e) => {
+                    changeTodoState(_id)
+                    setCompleted(!completed)
+                }}
+            />
+            <input
+                className={styles.text}
+                type="text"
+                readOnly
+                value={value}
+                onChange={(e) => {
+                    setValue(e.target.value)
+                }}
+            />
+            <button
+                onClick={() => {
+                    deleteTodo(_id)
+                }}
+            >
+                <BsTrash className={styles.trash} />
+            </button>
         </div>
-    );
+    )
 }
-export default Task;
+export default Task
