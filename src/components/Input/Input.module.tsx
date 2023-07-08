@@ -3,7 +3,7 @@ import styles from './Input.module.css'
 import { useActions } from '../../hooks/useActions'
 const Input: FC = () => {
     const [title, setTitle] = useState<string>('')
-    const { createTodo } = useActions()   
+    const { createTodo } = useActions()
     return (
         <div className={styles.input}>
             <input

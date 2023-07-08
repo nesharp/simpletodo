@@ -39,5 +39,19 @@ export const todosSlice = createSlice({
                 return item
             })
         },
+        changeTodoText: (
+            state,
+            action: PayloadAction<{
+                _id: string
+                value: string
+            }>
+        ) => {
+            state.tasks.map((task) => {
+                if (task._id === action.payload._id) {
+                    task.text = action.payload.value
+                }
+                return task
+            })
+        },
     },
 })

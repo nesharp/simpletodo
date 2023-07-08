@@ -7,7 +7,8 @@ import { useActions } from '../../hooks/useActions'
 const Task: FC<ITask> = ({ _id, text, isCompleted }) => {
     const [value, setValue] = useState<string>(text)
     const [completed, setCompleted] = useState<boolean>(isCompleted)
-    const { deleteTodo, changeTodoState } = useActions()
+    const { deleteTodo, changeTodoState, changeTodoText } = useActions()
+
     return (
         <div className={styles.task} key={_id}>
             <input
@@ -22,10 +23,16 @@ const Task: FC<ITask> = ({ _id, text, isCompleted }) => {
             <input
                 className={styles.text}
                 type="text"
-                readOnly
                 value={value}
                 onChange={(e) => {
                     setValue(e.target.value)
+                    changeTodoText({ _id, value })
+                }}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        changeTodoText({ _id, value })
+                        e.currentTarget.blur()
+                    }
                 }}
             />
             <button

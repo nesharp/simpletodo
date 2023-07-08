@@ -11,7 +11,6 @@ const Tasks = () => {
     store.subscribe(() => {
         setTasks(store.getState().tasks.tasks)
     })
-    
     return (
         <div>
             <Input />
